@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="Advanced">
+    <entry name="icon" type="String">
+      <label>The name of the icon to use for the compact representation.</label>
+      <default>start-here-kde-symbolic</default>
+    </entry>
+    <entry name="showAdvancedMode" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="aboutThisComputerSettings" type="String">
+      <default>kinfocenter</default>
+    </entry>
+    <entry name="systemPreferencesSettings" type="String">
+      <default>systemsettings</default>
+    </entry>
+    <entry name="terminalSettings" type="String">
+      <default>xdg-terminal-exec</default>
+    </entry>
+    <entry name="forceQuitSettings" type="String">
+      <default>xkill</default>
+    </entry>
+    <entry name="sleepSettings" type="String">
+      <default>systemctl suspend</default>
+    </entry>
+    <entry name="restartSettings" type="String">
+      <default>qdbus-qt6 org.kde.LogoutPrompt /LogoutPrompt promptReboot</default>
+    </entry>
+    <entry name="shutDownSettings" type="String">
+      <default>qdbus-qt6 org.kde.LogoutPrompt /LogoutPrompt promptShutDown</default>
+    </entry>
+    <entry name="lockScreenSettings" type="String">
+      <default>qdbus-qt6 org.kde.screensaver /ScreenSaver Lock</default>
+    </entry>
+    <entry name="logOutSettings" type="String">
+      <default>qdbus-qt6 org.kde.LogoutPrompt /LogoutPrompt promptLogout</default>
+    </entry>
+  </group>
+</kcfg>

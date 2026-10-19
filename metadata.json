@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Ridwan Faiz",
+                "Email": ""
+            }
+        ],
+        "Category": "Application Launchers",
+        "Description": "A drop-down system action menu.",
+        "EnabledByDefault": true,
+        "Icon": "start-here-kde",
+        "Id": "com.github.rid1fz.menu",
+        "License": "GPL-2.0+",
+        "Name": "Menu",
+        "Version": "1.0.0",
+        "Website": "https://github.com/Rid1FZ"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
