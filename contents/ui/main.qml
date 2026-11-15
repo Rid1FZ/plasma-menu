@@ -73,13 +73,14 @@ PlasmoidItem {
         readonly property string terminalCMD: plasmoid.configuration.terminalSettings
         readonly property string forceQuitCMD: plasmoid.configuration.forceQuitSettings
         readonly property string sleepCMD: plasmoid.configuration.sleepSettings
+        readonly property string hibernateCMD: plasmoid.configuration.hibernateSettings
         readonly property string restartCMD: plasmoid.configuration.restartSettings
         readonly property string shutDownCMD: plasmoid.configuration.shutDownSettings
         readonly property string lockScreenCMD: plasmoid.configuration.lockScreenSettings
         readonly property string logOutCMD: plasmoid.configuration.logOutSettings
         
         Layout.preferredWidth: iwSize
-        Layout.preferredHeight: aboutThisComputerItem.height * 12
+        Layout.preferredHeight: aboutThisComputerItem.height * 13
 
         focus: root.fullRepHasFocus
         Keys.onPressed: (event) => {
@@ -169,6 +170,18 @@ PlasmoidItem {
                 }
                 activeFocusOnTab: true
                 KeyNavigation.up: terminalItem
+                KeyNavigation.down: hibernateItem
+            }
+
+            ListDelegate {
+                id: hibernateItem
+                highlight: delegateHighlight
+                text: "Hibernate"
+                onClicked: {
+                    executable.exec(hibernateCMD)
+                }
+                activeFocusOnTab: true
+                KeyNavigation.up: sleepItem
                 KeyNavigation.down: restartItem
             }
 
@@ -180,7 +193,7 @@ PlasmoidItem {
                     executable.exec(restartCMD); 
                 }
                 activeFocusOnTab: true
-                KeyNavigation.up: sleepItem
+                KeyNavigation.up: hibernateItem
                 KeyNavigation.down: shutDownItem
             }
 

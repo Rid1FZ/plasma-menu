@@ -26,6 +26,7 @@ KCM.SimpleKCM {
     property alias cfg_systemPreferencesSettings: systemPreferencesSettings.text
     property alias cfg_terminalSettings: terminalSettings.text
     property alias cfg_sleepSettings: sleepSettings.text
+    property alias cfg_hibernateSettings: hibernateSettings.text
     property alias cfg_restartSettings: restartSettings.text
     property alias cfg_shutDownSettings: shutDownSettings.text
     property alias cfg_lockScreenSettings: lockScreenSettings.text
@@ -159,6 +160,21 @@ KCM.SimpleKCM {
                 onTriggered: {
                     sleepSettings.clear()
                     root.cfg_sleepSettings = ""
+                }
+            }
+        }
+
+        Kirigami.ActionTextField {
+            id: hibernateSettings
+            Kirigami.FormData.label: "Hibernate :"
+            placeholderText: "systemctl hibernate"
+            enabled: showAdvancedMode.checked
+            rightActions: QQC2.Action {
+                icon.name: "edit-clear"
+                enabled: hibernateSettings.text !== ""
+                onTriggered: {
+                    hibernateSettings.clear()
+                    root.cfg_hibernateSettings = ""
                 }
             }
         }

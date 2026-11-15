@@ -28,6 +28,9 @@
     <entry name="sleepSettings" type="String">
       <default>systemctl suspend</default>
     </entry>
+    <entry name="hibernateSettings" type="String">
+      <default>systemctl hibernate</default>
+    </entry>
     <entry name="restartSettings" type="String">
       <default>qdbus-qt6 org.kde.LogoutPrompt /LogoutPrompt promptReboot</default>
     </entry>
